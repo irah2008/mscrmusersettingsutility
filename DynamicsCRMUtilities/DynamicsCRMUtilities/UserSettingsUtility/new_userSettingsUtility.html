@@ -6,197 +6,221 @@
     <title></title>
 </head>
 <body>
-    <script src="../ClientGlobalContext.js.aspx" type="text/javascript"></script>
+    <script src="ClientGlobalContext.js.aspx" type="text/javascript"></script>
     <link href="new_bootstrap.min.css" rel="stylesheet" />
     <script src="new_jqeurymin.js"></script>
-    <div class="container">
-        <label for="userSelect">Select User </label>
-        <select id="userSelect" name="D1">
-            <option></option>
-        </select>
+    <form class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="userSelect">Select User </label>
+                <select id="userSelect" name="D1" class="form-control" multiple>
+                    <option></option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <table id="settingsTable" class="table table-striped">
+                    <tr>
+                        <td>
+                            <label for="allowSendonBehalf">Allow other Microsoft Dynamics 365 users to send email on your behalf&nbsp;&nbsp; </label>
+                            <select id="allowSendonBehalf">
+                                <option value="-1">No Change</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
 
-        <br />
-        <br />
-        <table id="settingsTable" class="table table-striped">
-            <tr>
-                <td>
-                    <label for="allowSendonBehalf">Allow other Microsoft Dynamics 365 users to send email on your behalf. </label>
-                    <input id="allowSendonBehalf" type="checkbox" />
-                </td>
-                <td>
-                    <label for="selectIncomingEmailFilteringMethod">Track</label>
-                    <select id="selectIncomingEmailFilteringMethod" name="selectIncomingEmailFilteringMethod">
-                        <option value="0" title="All email messages">All email messages</option>
-                        <option value="1" selected="selected" title="Email messages in response to Dynamics 365 email">Email messages in response to Dynamics 365 email</option>
-                        <option value="2" title="Email messages from Dynamics 365 Leads, Contacts and Accounts">Email messages from Dynamics 365 Leads, Contacts and Accounts</option>
-                        <option value="3" title="Email messages from Dynamics 365 records that are email enabled">Email messages from Dynamics 365 records that are email enabled</option>
-                    </select></td>
-                <!-- <td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="selectIncomingEmailFilteringMethod">Track&nbsp;&nbsp; </label>
+                            &nbsp;<select id="selectIncomingEmailFilteringMethod" name="selectIncomingEmailFilteringMethod">
+                                <option value="-1" selected="selected">No Change</option>
+                                <option value="0" title="All email messages">All email messages</option>
+                                <option value="1" title="Email messages in response to Dynamics 365 email">Email messages in response to Dynamics 365 email</option>
+                                <option value="2" title="Email messages from Dynamics 365 Leads, Contacts and Accounts">Email messages from Dynamics 365 Leads, Contacts and Accounts</option>
+                                <option value="3" title="Email messages from Dynamics 365 records that are email enabled">Email messages from Dynamics 365 records that are email enabled</option>
+                            </select></td>
+                        <!-- <td>
     <label for="allowSendonBehalf">Format</label>
    <select id="selectRegionalFormatCode" name="selectRegionalFormatCode" defaultselected="18441" class="ms-crm-SelectBox "><option value="1078" title="Afrikaans (South Africa)">Afrikaans (South Africa)</option><option value="1052" title="Albanian (Albania)">Albanian (Albania)</option><option value="1156" title="Alsatian (France)">Alsatian (France)</option><option value="1118" title="Amharic (Ethiopia)">Amharic (Ethiopia)</option><option value="5121" title="Arabic (Algeria)">Arabic (Algeria)</option><option value="15361" title="Arabic (Bahrain)">Arabic (Bahrain)</option><option value="3073" title="Arabic (Egypt)">Arabic (Egypt)</option><option value="2049" title="Arabic (Iraq)">Arabic (Iraq)</option><option value="11265" title="Arabic (Jordan)">Arabic (Jordan)</option><option value="13313" title="Arabic (Kuwait)">Arabic (Kuwait)</option><option value="12289" title="Arabic (Lebanon)">Arabic (Lebanon)</option><option value="4097" title="Arabic (Libya)">Arabic (Libya)</option><option value="6145" title="Arabic (Morocco)">Arabic (Morocco)</option><option value="8193" title="Arabic (Oman)">Arabic (Oman)</option><option value="16385" title="Arabic (Qatar)">Arabic (Qatar)</option><option value="1025" title="Arabic (Saudi Arabia)">Arabic (Saudi Arabia)</option><option value="10241" title="Arabic (Syria)">Arabic (Syria)</option><option value="7169" title="Arabic (Tunisia)">Arabic (Tunisia)</option><option value="14337" title="Arabic (U.A.E.)">Arabic (U.A.E.)</option><option value="9217" title="Arabic (Yemen)">Arabic (Yemen)</option><option value="1067" title="Armenian (Armenia)">Armenian (Armenia)</option><option value="1101" title="Assamese (India)">Assamese (India)</option><option value="2092" title="Azerbaijani (Cyrillic, Azerbaijan)">Azerbaijani (Cyrillic, Azerbaijan)</option><option value="1068" title="Azerbaijani (Latin, Azerbaijan)">Azerbaijani (Latin, Azerbaijan)</option><option value="2117" title="Bangla (Bangladesh)">Bangla (Bangladesh)</option><option value="1093" title="Bangla (India)">Bangla (India)</option><option value="1133" title="Bashkir (Russia)">Bashkir (Russia)</option><option value="1069" title="Basque (Basque)">Basque (Basque)</option><option value="1059" title="Belarusian (Belarus)">Belarusian (Belarus)</option><option value="8218" title="Bosnian (Cyrillic, Bosnia and Herzegovina)">Bosnian (Cyrillic, Bosnia and Herzegovina)</option><option value="5146" title="Bosnian (Latin, Bosnia and Herzegovina)">Bosnian (Latin, Bosnia and Herzegovina)</option><option value="1150" title="Breton (France)">Breton (France)</option><option value="1026" title="Bulgarian (Bulgaria)">Bulgarian (Bulgaria)</option><option value="1027" title="Catalan (Catalan)">Catalan (Catalan)</option><option value="3076" title="Chinese (Hong Kong S.A.R.)">Chinese (Hong Kong S.A.R.)</option><option value="5124" title="Chinese (Macao S.A.R.)">Chinese (Macao S.A.R.)</option><option value="2052" title="Chinese (People's Republic of China)">Chinese (People's Republic of China)</option><option value="4100" title="Chinese (Singapore)">Chinese (Singapore)</option><option value="1028" title="Chinese (Taiwan)">Chinese (Taiwan)</option><option value="1155" title="Corsican (France)">Corsican (France)</option><option value="4122" title="Croatian (Bosnia and Herzegovina)">Croatian (Bosnia and Herzegovina)</option><option value="1050" title="Croatian (Croatia)">Croatian (Croatia)</option><option value="1029" title="Czech (Czech Republic)">Czech (Czech Republic)</option><option value="1030" title="Danish (Denmark)">Danish (Denmark)</option><option value="1164" title="Dari (Afghanistan)">Dari (Afghanistan)</option><option value="1125" title="Divehi (Maldives)">Divehi (Maldives)</option><option value="2067" title="Dutch (Belgium)">Dutch (Belgium)</option><option value="1043" title="Dutch (Netherlands)">Dutch (Netherlands)</option><option value="3081" title="English (Australia)">English (Australia)</option><option value="10249" title="English (Belize)">English (Belize)</option><option value="4105" title="English (Canada)">English (Canada)</option><option value="9225" title="English (Caribbean)">English (Caribbean)</option><option value="15369" title="English (Hong Kong)">English (Hong Kong)</option><option value="16393" title="English (India)">English (India)</option><option value="6153" title="English (Ireland)">English (Ireland)</option><option value="8201" title="English (Jamaica)">English (Jamaica)</option><option value="17417" title="English (Malaysia)">English (Malaysia)</option><option value="5129" title="English (New Zealand)">English (New Zealand)</option><option value="13321" title="English (Republic of the Philippines)">English (Republic of the Philippines)</option><option value="18441" selected="selected" title="English (Singapore)">English (Singapore)</option><option value="7177" title="English (South Africa)">English (South Africa)</option><option value="11273" title="English (Trinidad and Tobago)">English (Trinidad and Tobago)</option><option value="2057" title="English (United Kingdom)">English (United Kingdom)</option><option value="1033" title="English (United States)">English (United States)</option><option value="12297" title="English (Zimbabwe)">English (Zimbabwe)</option><option value="1061" title="Estonian (Estonia)">Estonian (Estonia)</option><option value="1080" title="Faroese (Faroe Islands)">Faroese (Faroe Islands)</option><option value="1124" title="Filipino (Philippines)">Filipino (Philippines)</option><option value="1035" title="Finnish (Finland)">Finnish (Finland)</option><option value="2060" title="French (Belgium)">French (Belgium)</option><option value="3084" title="French (Canada)">French (Canada)</option><option value="1036" title="French (France)">French (France)</option><option value="5132" title="French (Luxembourg)">French (Luxembourg)</option><option value="6156" title="French (Principality of Monaco)">French (Principality of Monaco)</option><option value="4108" title="French (Switzerland)">French (Switzerland)</option><option value="1122" title="Frisian (Netherlands)">Frisian (Netherlands)</option><option value="2151" title="Fulah (Sénégal)">Fulah (Sénégal)</option><option value="1110" title="Galician (Galician)">Galician (Galician)</option><option value="1079" title="Georgian (Georgia)">Georgian (Georgia)</option><option value="3079" title="German (Austria)">German (Austria)</option><option value="1031" title="German (Germany)">German (Germany)</option><option value="5127" title="German (Liechtenstein)">German (Liechtenstein)</option><option value="4103" title="German (Luxembourg)">German (Luxembourg)</option><option value="2055" title="German (Switzerland)">German (Switzerland)</option><option value="1032" title="Greek (Greece)">Greek (Greece)</option><option value="1135" title="Greenlandic (Greenland)">Greenlandic (Greenland)</option><option value="1140" title="Guarani (Paraguái)">Guarani (Paraguái)</option><option value="1095" title="Gujarati (India)">Gujarati (India)</option><option value="1128" title="Hausa (Latin) (Nigeria)">Hausa (Latin) (Nigeria)</option><option value="1141" title="Hawaiʻi (ʻAmelika)">Hawaiʻi (ʻAmelika)</option><option value="1037" title="Hebrew (Israel)">Hebrew (Israel)</option><option value="1081" title="Hindi (India)">Hindi (India)</option><option value="1038" title="Hungarian (Hungary)">Hungarian (Hungary)</option><option value="1039" title="Icelandic (Iceland)">Icelandic (Iceland)</option><option value="1136" title="Igbo (Nigeria)">Igbo (Nigeria)</option><option value="1057" title="Indonesian (Indonesia)">Indonesian (Indonesia)</option><option value="1117" title="Inuktitut (Canada)">Inuktitut (Canada)</option><option value="2141" title="Inuktitut (Latin, Canada)">Inuktitut (Latin, Canada)</option><option value="2108" title="Irish (Ireland)">Irish (Ireland)</option><option value="1040" title="Italian (Italy)">Italian (Italy)</option><option value="2064" title="Italian (Switzerland)">Italian (Switzerland)</option><option value="1041" title="Japanese (Japan)">Japanese (Japan)</option><option value="1158" title="K'iche (Guatemala)">K'iche (Guatemala)</option><option value="1099" title="Kannada (India)">Kannada (India)</option><option value="1087" title="Kazakh (Kazakhstan)">Kazakh (Kazakhstan)</option><option value="1107" title="Khmer (Cambodia)">Khmer (Cambodia)</option><option value="1159" title="Kinyarwanda (Rwanda)">Kinyarwanda (Rwanda)</option><option value="1089" title="Kiswahili (Kenya)">Kiswahili (Kenya)</option><option value="1111" title="Konkani (India)">Konkani (India)</option><option value="1042" title="Korean (Korea)">Korean (Korea)</option><option value="1088" title="Kyrgyz (Kyrgyzstan)">Kyrgyz (Kyrgyzstan)</option><option value="1108" title="Lao (Lao P.D.R.)">Lao (Lao P.D.R.)</option><option value="1062" title="Latvian (Latvia)">Latvian (Latvia)</option><option value="1063" title="Lithuanian (Lithuania)">Lithuanian (Lithuania)</option><option value="2094" title="Lower Sorbian (Germany)">Lower Sorbian (Germany)</option><option value="1134" title="Luxembourgish (Luxembourg)">Luxembourgish (Luxembourg)</option><option value="1071" title="Macedonian">Macedonian</option><option value="2110" title="Malay (Brunei Darussalam)">Malay (Brunei Darussalam)</option><option value="1086" title="Malay (Malaysia)">Malay (Malaysia)</option><option value="1100" title="Malayalam (India)">Malayalam (India)</option><option value="1082" title="Maltese">Maltese</option><option value="1153" title="Maori">Maori</option><option value="1146" title="Mapudungun (Chile)">Mapudungun (Chile)</option><option value="1102" title="Marathi (India)">Marathi (India)</option><option value="1148" title="Mohawk (Mohawk)">Mohawk (Mohawk)</option><option value="1104" title="Mongolian (Cyrillic, Mongolia)">Mongolian (Cyrillic, Mongolia)</option><option value="2128" title="Mongolian (Traditional Mongolian) (People's Republic of China)">Mongolian (Traditional Mongolian) (People's Republic of China)</option><option value="1121" title="Nepali (Nepal)">Nepali (Nepal)</option><option value="1044" title="Norwegian, Bokmål (Norway)">Norwegian, Bokmål (Norway)</option><option value="2068" title="Norwegian, Nynorsk (Norway)">Norwegian, Nynorsk (Norway)</option><option value="1154" title="Occitan (France)">Occitan (France)</option><option value="1096" title="Odia (India)">Odia (India)</option><option value="1138" title="Oromoo (Itoophiyaa)">Oromoo (Itoophiyaa)</option><option value="1123" title="Pashto (Afghanistan)">Pashto (Afghanistan)</option><option value="1065" title="Persian (Iran)">Persian (Iran)</option><option value="1045" title="Polish (Poland)">Polish (Poland)</option><option value="1046" title="Portuguese (Brazil)">Portuguese (Brazil)</option><option value="2070" title="Portuguese (Portugal)">Portuguese (Portugal)</option><option value="1094" title="Punjabi (India)">Punjabi (India)</option><option value="1131" title="Quechua (Bolivia)">Quechua (Bolivia)</option><option value="2155" title="Quechua (Ecuador)">Quechua (Ecuador)</option><option value="3179" title="Quechua (Peru)">Quechua (Peru)</option><option value="1048" title="Romanian (Romania)">Romanian (Romania)</option><option value="1047" title="Romansh (Switzerland)">Romansh (Switzerland)</option><option value="1049" title="Russian (Russia)">Russian (Russia)</option><option value="9275" title="Sami, Inari (Finland)">Sami, Inari (Finland)</option><option value="4155" title="Sami, Lule (Norway)">Sami, Lule (Norway)</option><option value="5179" title="Sami, Lule (Sweden)">Sami, Lule (Sweden)</option><option value="3131" title="Sami, Northern (Finland)">Sami, Northern (Finland)</option><option value="1083" title="Sami, Northern (Norway)">Sami, Northern (Norway)</option><option value="2107" title="Sami, Northern (Sweden)">Sami, Northern (Sweden)</option><option value="8251" title="Sami, Skolt (Finland)">Sami, Skolt (Finland)</option><option value="6203" title="Sami, Southern (Norway)">Sami, Southern (Norway)</option><option value="7227" title="Sami, Southern (Sweden)">Sami, Southern (Sweden)</option><option value="1103" title="Sanskrit (India)">Sanskrit (India)</option><option value="1169" title="Scottish Gaelic (United Kingdom)">Scottish Gaelic (United Kingdom)</option><option value="7194" title="Serbian (Cyrillic, Bosnia and Herzegovina)">Serbian (Cyrillic, Bosnia and Herzegovina)</option><option value="12314" title="Serbian (Cyrillic, Montenegro)">Serbian (Cyrillic, Montenegro)</option><option value="3098" title="Serbian (Cyrillic, Serbia)">Serbian (Cyrillic, Serbia)</option><option value="10266" title="Serbian (Cyrillic, Serbia) (sr-Cyrl-RS) (10266)">Serbian (Cyrillic, Serbia) (sr-Cyrl-RS) (10266)</option><option value="6170" title="Serbian (Latin, Bosnia and Herzegovina)">Serbian (Latin, Bosnia and Herzegovina)</option><option value="11290" title="Serbian (Latin, Montenegro)">Serbian (Latin, Montenegro)</option><option value="2074" title="Serbian (Latin, Serbia)">Serbian (Latin, Serbia)</option><option value="9242" title="Serbian (Latin, Serbia) (sr-Latn-RS) (9242)">Serbian (Latin, Serbia) (sr-Latn-RS) (9242)</option><option value="1072" title="Sesotho (South Africa)">Sesotho (South Africa)</option><option value="1132" title="Sesotho sa Leboa (South Africa)">Sesotho sa Leboa (South Africa)</option><option value="2098" title="Setswana (Botswana)">Setswana (Botswana)</option><option value="1074" title="Setswana (South Africa)">Setswana (South Africa)</option><option value="1115" title="Sinhala (Sri Lanka)">Sinhala (Sri Lanka)</option><option value="1051" title="Slovak (Slovakia)">Slovak (Slovakia)</option><option value="1060" title="Slovenian (Slovenia)">Slovenian (Slovenia)</option><option value="1143" title="Soomaali (Soomaaliya)">Soomaali (Soomaaliya)</option><option value="11274" title="Spanish (Argentina)">Spanish (Argentina)</option><option value="16394" title="Spanish (Bolivia)">Spanish (Bolivia)</option><option value="13322" title="Spanish (Chile)">Spanish (Chile)</option><option value="9226" title="Spanish (Colombia)">Spanish (Colombia)</option><option value="5130" title="Spanish (Costa Rica)">Spanish (Costa Rica)</option><option value="7178" title="Spanish (Dominican Republic)">Spanish (Dominican Republic)</option><option value="12298" title="Spanish (Ecuador)">Spanish (Ecuador)</option><option value="17418" title="Spanish (El Salvador)">Spanish (El Salvador)</option><option value="4106" title="Spanish (Guatemala)">Spanish (Guatemala)</option><option value="18442" title="Spanish (Honduras)">Spanish (Honduras)</option><option value="2058" title="Spanish (Mexico)">Spanish (Mexico)</option><option value="19466" title="Spanish (Nicaragua)">Spanish (Nicaragua)</option><option value="6154" title="Spanish (Panama)">Spanish (Panama)</option><option value="15370" title="Spanish (Paraguay)">Spanish (Paraguay)</option><option value="10250" title="Spanish (Peru)">Spanish (Peru)</option><option value="20490" title="Spanish (Puerto Rico)">Spanish (Puerto Rico)</option><option value="3082" title="Spanish (Spain)">Spanish (Spain)</option><option value="21514" title="Spanish (United States)">Spanish (United States)</option><option value="14346" title="Spanish (Uruguay)">Spanish (Uruguay)</option><option value="8202" title="Spanish (Venezuela)">Spanish (Venezuela)</option><option value="2077" title="Swedish (Finland)">Swedish (Finland)</option><option value="1053" title="Swedish (Sweden)">Swedish (Sweden)</option><option value="1114" title="Syriac (Syria)">Syriac (Syria)</option><option value="1064" title="Tajik (Cyrillic) (Tajikistan)">Tajik (Cyrillic) (Tajikistan)</option><option value="2143" title="Tamazight (Latin) (Algeria)">Tamazight (Latin) (Algeria)</option><option value="1097" title="Tamil (India)">Tamil (India)</option><option value="1092" title="Tatar (Russia)">Tatar (Russia)</option><option value="1098" title="Telugu (India)">Telugu (India)</option><option value="1054" title="Thai (Thailand)">Thai (Thailand)</option><option value="1105" title="Tibetan (People's Republic of China)">Tibetan (People's Republic of China)</option><option value="1055" title="Turkish (Turkey)">Turkish (Turkey)</option><option value="1090" title="Turkmen (Turkmenistan)">Turkmen (Turkmenistan)</option><option value="1152" title="Uighur (People's Republic of China)">Uighur (People's Republic of China)</option><option value="1058" title="Ukrainian (Ukraine)">Ukrainian (Ukraine)</option><option value="1070" title="Upper Sorbian (Germany)">Upper Sorbian (Germany)</option><option value="1056" title="Urdu (Islamic Republic of Pakistan)">Urdu (Islamic Republic of Pakistan)</option><option value="2115" title="Uzbek (Cyrillic, Uzbekistan)">Uzbek (Cyrillic, Uzbekistan)</option><option value="1091" title="Uzbek (Latin, Uzbekistan)">Uzbek (Latin, Uzbekistan)</option><option value="2051" title="Valencià (Espanya)">Valencià (Espanya)</option><option value="1066" title="Vietnamese (Vietnam)">Vietnamese (Vietnam)</option><option value="1106" title="Welsh">Welsh</option><option value="1160" title="Wolof (Senegal)">Wolof (Senegal)</option><option value="1076" title="Xhosa">Xhosa</option><option value="1073" title="Xitsonga (South Africa)">Xitsonga (South Africa)</option><option value="1157" title="Yakut (Russia)">Yakut (Russia)</option><option value="1144" title="Yi (People's Republic of China)">Yi (People's Republic of China)</option><option value="1130" title="Yoruba (Nigeria)">Yoruba (Nigeria)</option><option value="1077" title="Zulu">Zulu</option><option value="22538" title="español (Latinoamérica)">español (Latinoamérica)</option><option value="11276" title="français (Cameroun)">français (Cameroun)</option><option value="9228" title="français (Congo [RDC])">français (Congo [RDC])</option><option value="12300" title="français (Côte d’Ivoire)">français (Côte d’Ivoire)</option><option value="15372" title="français (Haïti)">français (Haïti)</option><option value="13324" title="français (Mali)">français (Mali)</option><option value="14348" title="français (Maroc)">français (Maroc)</option><option value="8204" title="français (Réunion)">français (Réunion)</option><option value="10252" title="français (Sénégal)">français (Sénégal)</option><option value="2072" title="română (Republica Moldova)">română (Republica Moldova)</option><option value="2080" title="اردو (بھارت)">اردو (بھارت)</option><option value="2137" title="سنڌي (پاکستان)">سنڌي (پاکستان)</option><option value="2118" title="پنجابی (پاکستان)">پنجابی (پاکستان)</option><option value="1170" title="کوردیی ناوەڕاست (کوردستان)">کوردیی ناوەڕاست (کوردستان)</option><option value="2145" title="नेपाली (भारत)">नेपाली (भारत)</option><option value="2121" title="தமிழ் (இலங்கை)">தமிழ் (இலங்கை)</option><option value="1109" title="ဗမာ (မြန်မာ)">ဗမာ (မြန်မာ)</option><option value="1139" title="ትግርኛ (ኢትዮጵያ)">ትግርኛ (ኢትዮጵያ)</option><option value="2163" title="ትግርኛ (ኤርትራ)">ትግርኛ (ኤርትራ)</option><option value="1116" title="ᏣᎳᎩ (ᏣᎳᎩ)">ᏣᎳᎩ (ᏣᎳᎩ)</option><option value="3152" title="ᠮᠤᠨᠭᠭᠤᠯ ᠬᠡᠯᠡ (ᠮᠤᠨᠭᠭᠤᠯ ᠣᠯᠣᠰ)">ᠮᠤᠨᠭᠭᠤᠯ ᠬᠡᠯᠡ (ᠮᠤᠨᠭᠭᠤᠯ ᠣᠯᠣᠰ)</option><option value="4191" title="ⵜⴰⵎⴰⵣⵉⵖⵜ (ⵍⵎⵖⵔⵉⴱ)">ⵜⴰⵎⴰⵣⵉⵖⵜ (ⵍⵎⵖⵔⵉⴱ)</option></select>
                 </td>-->
-            </tr>
-            <tr>
-                <td>
-                    <label for="selectPagingLimit">Records per Page </label>
-                    <select id="selectPagingLimit" name="selectPagingLimit">
-                        <option value="25" title="25">25</option>
-                        <option value="50" title="50">50</option>
-                        <option value="75" title="75">75</option>
-                        <option value="100" title="100">100</option>
-                        <option value="250" selected="selected" title="250">250</option>
-                    </select>
-                </td>
-                <td>
-                    <label for="timezone">Time Zone </label>
-                    <select id="timezone" name="timezone">
-                        <option value="0" title="(GMT-12:00) International Date Line West">(GMT-12:00) International Date Line West</option>
-                        <option value="6" title="(GMT-11:00) Coordinated Universal Time-11">(GMT-11:00) Coordinated Universal Time-11</option>
-                        <option value="2" title="(GMT-10:00) Hawaii">(GMT-10:00) Hawaii</option>
-                        <option value="7" title="(GMT-10:00) Aleutian Islands">(GMT-10:00) Aleutian Islands</option>
-                        <option value="8" title="(GMT-09:30) Marquesas Islands">(GMT-09:30) Marquesas Islands</option>
-                        <option value="3" title="(GMT-09:00) Alaska">(GMT-09:00) Alaska</option>
-                        <option value="9" title="(GMT-09:00) Coordinated Universal Time-09">(GMT-09:00) Coordinated Universal Time-09</option>
-                        <option value="4" title="(GMT-08:00) Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-                        <option value="5" title="(GMT-08:00) Baja California">(GMT-08:00) Baja California</option>
-                        <option value="11" title="(GMT-08:00) Coordinated Universal Time-08">(GMT-08:00) Coordinated Universal Time-08</option>
-                        <option value="10" title="(GMT-07:00) Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                        <option value="12" title="(GMT-07:00) Chihuahua, La Paz, Mazatlan">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
-                        <option value="15" title="(GMT-07:00) Arizona">(GMT-07:00) Arizona</option>
-                        <option value="20" title="(GMT-06:00) Central Time (US &amp; Canada)">(GMT-06:00) Central Time (US &amp; Canada)</option>
-                        <option value="25" title="(GMT-06:00) Saskatchewan">(GMT-06:00) Saskatchewan</option>
-                        <option value="29" title="(GMT-06:00) Guadalajara, Mexico City, Monterrey">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
-                        <option value="33" title="(GMT-06:00) Central America">(GMT-06:00) Central America</option>
-                        <option value="34" title="(GMT-06:00) Easter Island">(GMT-06:00) Easter Island</option>
-                        <option value="35" title="(GMT-05:00) Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-                        <option value="40" title="(GMT-05:00) Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                        <option value="43" title="(GMT-05:00) Haiti">(GMT-05:00) Haiti</option>
-                        <option value="44" title="(GMT-05:00) Havana">(GMT-05:00) Havana</option>
-                        <option value="45" title="(GMT-05:00) Bogota, Lima, Quito, Rio Branco">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
-                        <option value="301" title="(GMT-05:00) Chetumal">(GMT-05:00) Chetumal</option>
-                        <option value="47" title="(GMT-04:00) Caracas">(GMT-04:00) Caracas</option>
-                        <option value="50" title="(GMT-04:00) Atlantic Time (Canada)">(GMT-04:00) Atlantic Time (Canada)</option>
-                        <option value="51" title="(GMT-04:00) Turks and Caicos">(GMT-04:00) Turks and Caicos</option>
-                        <option value="55" title="(GMT-04:00) Georgetown, La Paz, San Juan">(GMT-04:00) Georgetown, La Paz, San Juan</option>
-                        <option value="56" title="(GMT-04:00) Santiago">(GMT-04:00) Santiago</option>
-                        <option value="58" title="(GMT-04:00) Cuiaba">(GMT-04:00) Cuiaba</option>
-                        <option value="59" title="(GMT-04:00) Asuncion">(GMT-04:00) Asuncion</option>
-                        <option value="60" title="(GMT-03:30) Newfoundland">(GMT-03:30) Newfoundland</option>
-                        <option value="65" title="(GMT-03:00) Brasilia">(GMT-03:00) Brasilia</option>
-                        <option value="69" title="(GMT-03:00) Buenos Aires">(GMT-03:00) Buenos Aires</option>
-                        <option value="70" title="(GMT-03:00) Cayenne, Fortaleza">(GMT-03:00) Cayenne, Fortaleza</option>
-                        <option value="71" title="(GMT-03:00) Salvador">(GMT-03:00) Salvador</option>
-                        <option value="72" title="(GMT-03:00) Saint Pierre and Miquelon">(GMT-03:00) Saint Pierre and Miquelon</option>
-                        <option value="73" title="(GMT-03:00) Greenland">(GMT-03:00) Greenland</option>
-                        <option value="74" title="(GMT-03:00) Montevideo">(GMT-03:00) Montevideo</option>
-                        <option value="77" title="(GMT-03:00) Araguaina">(GMT-03:00) Araguaina</option>
-                        <option value="75" title="(GMT-02:00) Mid-Atlantic">(GMT-02:00) Mid-Atlantic</option>
-                        <option value="76" title="(GMT-02:00) Coordinated Universal Time-02">(GMT-02:00) Coordinated Universal Time-02</option>
-                        <option value="80" title="(GMT-01:00) Azores">(GMT-01:00) Azores</option>
-                        <option value="83" title="(GMT-01:00) Cabo Verde Is.">(GMT-01:00) Cabo Verde Is.</option>
-                        <option value="84" title="(GMT+00:00) Casablanca">(GMT+00:00) Casablanca</option>
-                        <option value="85" title="(GMT+00:00) Dublin, Edinburgh, Lisbon, London">(GMT+00:00) Dublin, Edinburgh, Lisbon, London</option>
-                        <option value="90" title="(GMT+00:00) Monrovia, Reykjavik">(GMT+00:00) Monrovia, Reykjavik</option>
-                        <option value="92" title="(GMT) Coordinated Universal Time">(GMT) Coordinated Universal Time</option>
-                        <option value="95" title="(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
-                        <option value="100" title="(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
-                        <option value="105" title="(GMT+01:00) Brussels, Copenhagen, Madrid, Paris">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option>
-                        <option value="110" title="(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
-                        <option value="113" title="(GMT+01:00) West Central Africa">(GMT+01:00) West Central Africa</option>
-                        <option value="141" title="(GMT+01:00) Windhoek">(GMT+01:00) Windhoek</option>
-                        <option value="115" title="(GMT+02:00) Chisinau">(GMT+02:00) Chisinau</option>
-                        <option value="120" title="(GMT+02:00) Cairo">(GMT+02:00) Cairo</option>
-                        <option value="125" title="(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
-                        <option value="129" title="(GMT+02:00) Amman">(GMT+02:00) Amman</option>
-                        <option value="130" title="(GMT+02:00) Athens, Bucharest">(GMT+02:00) Athens, Bucharest</option>
-                        <option value="131" title="(GMT+02:00) Beirut">(GMT+02:00) Beirut</option>
-                        <option value="133" title="(GMT+02:00) Damascus">(GMT+02:00) Damascus</option>
-                        <option value="135" title="(GMT+02:00) Jerusalem">(GMT+02:00) Jerusalem</option>
-                        <option value="140" title="(GMT+02:00) Harare, Pretoria">(GMT+02:00) Harare, Pretoria</option>
-                        <option value="142" title="(GMT+02:00) Gaza, Hebron">(GMT+02:00) Gaza, Hebron</option>
-                        <option value="159" title="(GMT+02:00) Kaliningrad">(GMT+02:00) Kaliningrad</option>
-                        <option value="134" title="(GMT+03:00) Istanbul">(GMT+03:00) Istanbul</option>
-                        <option value="145" title="(GMT+03:00) Moscow, St. Petersburg, Volgograd">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option>
-                        <option value="150" title="(GMT+03:00) Kuwait, Riyadh">(GMT+03:00) Kuwait, Riyadh</option>
-                        <option value="151" title="(GMT+03:00) Minsk">(GMT+03:00) Minsk</option>
-                        <option value="155" title="(GMT+03:00) Nairobi">(GMT+03:00) Nairobi</option>
-                        <option value="158" title="(GMT+03:00) Baghdad">(GMT+03:00) Baghdad</option>
-                        <option value="160" title="(GMT+03:30) Tehran">(GMT+03:30) Tehran</option>
-                        <option value="165" title="(GMT+04:00) Abu Dhabi, Muscat">(GMT+04:00) Abu Dhabi, Muscat</option>
-                        <option value="169" title="(GMT+04:00) Baku">(GMT+04:00) Baku</option>
-                        <option value="170" title="(GMT+04:00) Yerevan">(GMT+04:00) Yerevan</option>
-                        <option value="172" title="(GMT+04:00) Port Louis">(GMT+04:00) Port Louis</option>
-                        <option value="173" title="(GMT+04:00) Tbilisi">(GMT+04:00) Tbilisi</option>
-                        <option value="174" title="(GMT+04:00) Izhevsk, Samara">(GMT+04:00) Izhevsk, Samara</option>
-                        <option value="176" title="(GMT+04:00) Astrakhan, Ulyanovsk">(GMT+04:00) Astrakhan, Ulyanovsk</option>
-                        <option value="175" title="(GMT+04:30) Kabul">(GMT+04:30) Kabul</option>
-                        <option value="180" title="(GMT+05:00) Ekaterinburg">(GMT+05:00) Ekaterinburg</option>
-                        <option value="184" title="(GMT+05:00) Islamabad, Karachi">(GMT+05:00) Islamabad, Karachi</option>
-                        <option value="185" title="(GMT+05:00) Tashkent">(GMT+05:00) Tashkent</option>
-                        <option value="190" title="(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
-                        <option value="200" title="(GMT+05:30) Sri Jayawardenepura">(GMT+05:30) Sri Jayawardenepura</option>
-                        <option value="193" title="(GMT+05:45) Kathmandu">(GMT+05:45) Kathmandu</option>
-                        <option value="195" title="(GMT+06:00) Astana">(GMT+06:00) Astana</option>
-                        <option value="196" title="(GMT+06:00) Dhaka">(GMT+06:00) Dhaka</option>
-                        <option value="197" title="(GMT+06:00) Omsk">(GMT+06:00) Omsk</option>
-                        <option value="203" title="(GMT+06:30) Yangon (Rangoon)">(GMT+06:30) Yangon (Rangoon)</option>
-                        <option value="201" title="(GMT+07:00) Novosibirsk">(GMT+07:00) Novosibirsk</option>
-                        <option value="205" title="(GMT+07:00) Bangkok, Hanoi, Jakarta">(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
-                        <option value="207" title="(GMT+07:00) Krasnoyarsk">(GMT+07:00) Krasnoyarsk</option>
-                        <option value="208" title="(GMT+07:00) Barnaul, Gorno-Altaysk">(GMT+07:00) Barnaul, Gorno-Altaysk</option>
-                        <option value="209" title="(GMT+07:00) Hovd">(GMT+07:00) Hovd</option>
-                        <option value="211" title="(GMT+07:00) Tomsk">(GMT+07:00) Tomsk</option>
-                        <option value="210" title="(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
-                        <option value="215" selected="selected" title="(GMT+08:00) Kuala Lumpur, Singapore">(GMT+08:00) Kuala Lumpur, Singapore</option>
-                        <option value="220" title="(GMT+08:00) Taipei">(GMT+08:00) Taipei</option>
-                        <option value="225" title="(GMT+08:00) Perth">(GMT+08:00) Perth</option>
-                        <option value="227" title="(GMT+08:00) Irkutsk">(GMT+08:00) Irkutsk</option>
-                        <option value="228" title="(GMT+08:00) Ulaanbaatar">(GMT+08:00) Ulaanbaatar</option>
-                        <option value="229" title="(GMT+08:30) Pyongyang">(GMT+08:30) Pyongyang</option>
-                        <option value="231" title="(GMT+08:45) Eucla">(GMT+08:45) Eucla</option>
-                        <option value="230" title="(GMT+09:00) Seoul">(GMT+09:00) Seoul</option>
-                        <option value="235" title="(GMT+09:00) Osaka, Sapporo, Tokyo">(GMT+09:00) Osaka, Sapporo, Tokyo</option>
-                        <option value="240" title="(GMT+09:00) Yakutsk">(GMT+09:00) Yakutsk</option>
-                        <option value="241" title="(GMT+09:00) Chita">(GMT+09:00) Chita</option>
-                        <option value="245" title="(GMT+09:30) Darwin">(GMT+09:30) Darwin</option>
-                        <option value="250" title="(GMT+09:30) Adelaide">(GMT+09:30) Adelaide</option>
-                        <option value="255" title="(GMT+10:00) Canberra, Melbourne, Sydney">(GMT+10:00) Canberra, Melbourne, Sydney</option>
-                        <option value="260" title="(GMT+10:00) Brisbane">(GMT+10:00) Brisbane</option>
-                        <option value="265" title="(GMT+10:00) Hobart">(GMT+10:00) Hobart</option>
-                        <option value="270" title="(GMT+10:00) Vladivostok">(GMT+10:00) Vladivostok</option>
-                        <option value="275" title="(GMT+10:00) Guam, Port Moresby">(GMT+10:00) Guam, Port Moresby</option>
-                        <option value="274" title="(GMT+10:30) Lord Howe Island">(GMT+10:30) Lord Howe Island</option>
-                        <option value="276" title="(GMT+11:00) Bougainville Island">(GMT+11:00) Bougainville Island</option>
-                        <option value="277" title="(GMT+11:00) Norfolk Island">(GMT+11:00) Norfolk Island</option>
-                        <option value="278" title="(GMT+11:00) Sakhalin">(GMT+11:00) Sakhalin</option>
-                        <option value="279" title="(GMT+11:00) Chokurdakh">(GMT+11:00) Chokurdakh</option>
-                        <option value="280" title="(GMT+11:00) Solomon Is., New Caledonia">(GMT+11:00) Solomon Is., New Caledonia</option>
-                        <option value="281" title="(GMT+11:00) Magadan">(GMT+11:00) Magadan</option>
-                        <option value="284" title="(GMT+12:00) Coordinated Universal Time+12">(GMT+12:00) Coordinated Universal Time+12</option>
-                        <option value="285" title="(GMT+12:00) Fiji">(GMT+12:00) Fiji</option>
-                        <option value="290" title="(GMT+12:00) Auckland, Wellington">(GMT+12:00) Auckland, Wellington</option>
-                        <option value="295" title="(GMT+12:00) Anadyr, Petropavlovsk-Kamchatsky">(GMT+12:00) Anadyr, Petropavlovsk-Kamchatsky</option>
-                        <option value="299" title="(GMT+12:45) Chatham Islands">(GMT+12:45) Chatham Islands</option>
-                        <option value="1" title="(GMT+13:00) Samoa">(GMT+13:00) Samoa</option>
-                        <option value="300" title="(GMT+13:00) Nuku'alofa">(GMT+13:00) Nuku'alofa</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="currencyOption">Currency </label>
-                    <select id="currencyOption"></select>
-                </td>
-                <td>
-                    <label for="allowAutoCreate">Auto Create Contact </label>
-                    <input id="allowAutoCreate" type="checkbox" />
-                </td>
-            </tr>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="selectPagingLimit">Records per Page&nbsp;&nbsp; </label>
+                            <select id="selectPagingLimit" name="selectPagingLimit">
+                                <option value="-1" selected="selected">No Change</option>
+                                <option value="25" title="25">25</option>
+                                <option value="50" title="50">50</option>
+                                <option value="75" title="75">75</option>
+                                <option value="100" title="100">100</option>
+                                <option value="250" title="250">250</option>
+                            </select>
+                        </td>
 
-        </table>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="timezone">Time Zone&nbsp;&nbsp; </label>
+                            <select id="timezone" name="timezone">
+                                <option value="-1" selected="selected">No Change</option>
+                                <option value="0" title="(GMT-12:00) International Date Line West">(GMT-12:00) International Date Line West</option>
+                                <option value="6" title="(GMT-11:00) Coordinated Universal Time-11">(GMT-11:00) Coordinated Universal Time-11</option>
+                                <option value="2" title="(GMT-10:00) Hawaii">(GMT-10:00) Hawaii</option>
+                                <option value="7" title="(GMT-10:00) Aleutian Islands">(GMT-10:00) Aleutian Islands</option>
+                                <option value="8" title="(GMT-09:30) Marquesas Islands">(GMT-09:30) Marquesas Islands</option>
+                                <option value="3" title="(GMT-09:00) Alaska">(GMT-09:00) Alaska</option>
+                                <option value="9" title="(GMT-09:00) Coordinated Universal Time-09">(GMT-09:00) Coordinated Universal Time-09</option>
+                                <option value="4" title="(GMT-08:00) Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                                <option value="5" title="(GMT-08:00) Baja California">(GMT-08:00) Baja California</option>
+                                <option value="11" title="(GMT-08:00) Coordinated Universal Time-08">(GMT-08:00) Coordinated Universal Time-08</option>
+                                <option value="10" title="(GMT-07:00) Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                                <option value="12" title="(GMT-07:00) Chihuahua, La Paz, Mazatlan">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
+                                <option value="15" title="(GMT-07:00) Arizona">(GMT-07:00) Arizona</option>
+                                <option value="20" title="(GMT-06:00) Central Time (US &amp; Canada)">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                                <option value="25" title="(GMT-06:00) Saskatchewan">(GMT-06:00) Saskatchewan</option>
+                                <option value="29" title="(GMT-06:00) Guadalajara, Mexico City, Monterrey">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
+                                <option value="33" title="(GMT-06:00) Central America">(GMT-06:00) Central America</option>
+                                <option value="34" title="(GMT-06:00) Easter Island">(GMT-06:00) Easter Island</option>
+                                <option value="35" title="(GMT-05:00) Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                                <option value="40" title="(GMT-05:00) Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                                <option value="43" title="(GMT-05:00) Haiti">(GMT-05:00) Haiti</option>
+                                <option value="44" title="(GMT-05:00) Havana">(GMT-05:00) Havana</option>
+                                <option value="45" title="(GMT-05:00) Bogota, Lima, Quito, Rio Branco">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
+                                <option value="301" title="(GMT-05:00) Chetumal">(GMT-05:00) Chetumal</option>
+                                <option value="47" title="(GMT-04:00) Caracas">(GMT-04:00) Caracas</option>
+                                <option value="50" title="(GMT-04:00) Atlantic Time (Canada)">(GMT-04:00) Atlantic Time (Canada)</option>
+                                <option value="51" title="(GMT-04:00) Turks and Caicos">(GMT-04:00) Turks and Caicos</option>
+                                <option value="55" title="(GMT-04:00) Georgetown, La Paz, San Juan">(GMT-04:00) Georgetown, La Paz, San Juan</option>
+                                <option value="56" title="(GMT-04:00) Santiago">(GMT-04:00) Santiago</option>
+                                <option value="58" title="(GMT-04:00) Cuiaba">(GMT-04:00) Cuiaba</option>
+                                <option value="59" title="(GMT-04:00) Asuncion">(GMT-04:00) Asuncion</option>
+                                <option value="60" title="(GMT-03:30) Newfoundland">(GMT-03:30) Newfoundland</option>
+                                <option value="65" title="(GMT-03:00) Brasilia">(GMT-03:00) Brasilia</option>
+                                <option value="69" title="(GMT-03:00) Buenos Aires">(GMT-03:00) Buenos Aires</option>
+                                <option value="70" title="(GMT-03:00) Cayenne, Fortaleza">(GMT-03:00) Cayenne, Fortaleza</option>
+                                <option value="71" title="(GMT-03:00) Salvador">(GMT-03:00) Salvador</option>
+                                <option value="72" title="(GMT-03:00) Saint Pierre and Miquelon">(GMT-03:00) Saint Pierre and Miquelon</option>
+                                <option value="73" title="(GMT-03:00) Greenland">(GMT-03:00) Greenland</option>
+                                <option value="74" title="(GMT-03:00) Montevideo">(GMT-03:00) Montevideo</option>
+                                <option value="77" title="(GMT-03:00) Araguaina">(GMT-03:00) Araguaina</option>
+                                <option value="75" title="(GMT-02:00) Mid-Atlantic">(GMT-02:00) Mid-Atlantic</option>
+                                <option value="76" title="(GMT-02:00) Coordinated Universal Time-02">(GMT-02:00) Coordinated Universal Time-02</option>
+                                <option value="80" title="(GMT-01:00) Azores">(GMT-01:00) Azores</option>
+                                <option value="83" title="(GMT-01:00) Cabo Verde Is.">(GMT-01:00) Cabo Verde Is.</option>
+                                <option value="84" title="(GMT+00:00) Casablanca">(GMT+00:00) Casablanca</option>
+                                <option value="85" title="(GMT+00:00) Dublin, Edinburgh, Lisbon, London">(GMT+00:00) Dublin, Edinburgh, Lisbon, London</option>
+                                <option value="90" title="(GMT+00:00) Monrovia, Reykjavik">(GMT+00:00) Monrovia, Reykjavik</option>
+                                <option value="92" title="(GMT) Coordinated Universal Time">(GMT) Coordinated Universal Time</option>
+                                <option value="95" title="(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+                                <option value="100" title="(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+                                <option value="105" title="(GMT+01:00) Brussels, Copenhagen, Madrid, Paris">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option>
+                                <option value="110" title="(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+                                <option value="113" title="(GMT+01:00) West Central Africa">(GMT+01:00) West Central Africa</option>
+                                <option value="141" title="(GMT+01:00) Windhoek">(GMT+01:00) Windhoek</option>
+                                <option value="115" title="(GMT+02:00) Chisinau">(GMT+02:00) Chisinau</option>
+                                <option value="120" title="(GMT+02:00) Cairo">(GMT+02:00) Cairo</option>
+                                <option value="125" title="(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+                                <option value="129" title="(GMT+02:00) Amman">(GMT+02:00) Amman</option>
+                                <option value="130" title="(GMT+02:00) Athens, Bucharest">(GMT+02:00) Athens, Bucharest</option>
+                                <option value="131" title="(GMT+02:00) Beirut">(GMT+02:00) Beirut</option>
+                                <option value="133" title="(GMT+02:00) Damascus">(GMT+02:00) Damascus</option>
+                                <option value="135" title="(GMT+02:00) Jerusalem">(GMT+02:00) Jerusalem</option>
+                                <option value="140" title="(GMT+02:00) Harare, Pretoria">(GMT+02:00) Harare, Pretoria</option>
+                                <option value="142" title="(GMT+02:00) Gaza, Hebron">(GMT+02:00) Gaza, Hebron</option>
+                                <option value="159" title="(GMT+02:00) Kaliningrad">(GMT+02:00) Kaliningrad</option>
+                                <option value="134" title="(GMT+03:00) Istanbul">(GMT+03:00) Istanbul</option>
+                                <option value="145" title="(GMT+03:00) Moscow, St. Petersburg, Volgograd">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option>
+                                <option value="150" title="(GMT+03:00) Kuwait, Riyadh">(GMT+03:00) Kuwait, Riyadh</option>
+                                <option value="151" title="(GMT+03:00) Minsk">(GMT+03:00) Minsk</option>
+                                <option value="155" title="(GMT+03:00) Nairobi">(GMT+03:00) Nairobi</option>
+                                <option value="158" title="(GMT+03:00) Baghdad">(GMT+03:00) Baghdad</option>
+                                <option value="160" title="(GMT+03:30) Tehran">(GMT+03:30) Tehran</option>
+                                <option value="165" title="(GMT+04:00) Abu Dhabi, Muscat">(GMT+04:00) Abu Dhabi, Muscat</option>
+                                <option value="169" title="(GMT+04:00) Baku">(GMT+04:00) Baku</option>
+                                <option value="170" title="(GMT+04:00) Yerevan">(GMT+04:00) Yerevan</option>
+                                <option value="172" title="(GMT+04:00) Port Louis">(GMT+04:00) Port Louis</option>
+                                <option value="173" title="(GMT+04:00) Tbilisi">(GMT+04:00) Tbilisi</option>
+                                <option value="174" title="(GMT+04:00) Izhevsk, Samara">(GMT+04:00) Izhevsk, Samara</option>
+                                <option value="176" title="(GMT+04:00) Astrakhan, Ulyanovsk">(GMT+04:00) Astrakhan, Ulyanovsk</option>
+                                <option value="175" title="(GMT+04:30) Kabul">(GMT+04:30) Kabul</option>
+                                <option value="180" title="(GMT+05:00) Ekaterinburg">(GMT+05:00) Ekaterinburg</option>
+                                <option value="184" title="(GMT+05:00) Islamabad, Karachi">(GMT+05:00) Islamabad, Karachi</option>
+                                <option value="185" title="(GMT+05:00) Tashkent">(GMT+05:00) Tashkent</option>
+                                <option value="190" title="(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+                                <option value="200" title="(GMT+05:30) Sri Jayawardenepura">(GMT+05:30) Sri Jayawardenepura</option>
+                                <option value="193" title="(GMT+05:45) Kathmandu">(GMT+05:45) Kathmandu</option>
+                                <option value="195" title="(GMT+06:00) Astana">(GMT+06:00) Astana</option>
+                                <option value="196" title="(GMT+06:00) Dhaka">(GMT+06:00) Dhaka</option>
+                                <option value="197" title="(GMT+06:00) Omsk">(GMT+06:00) Omsk</option>
+                                <option value="203" title="(GMT+06:30) Yangon (Rangoon)">(GMT+06:30) Yangon (Rangoon)</option>
+                                <option value="201" title="(GMT+07:00) Novosibirsk">(GMT+07:00) Novosibirsk</option>
+                                <option value="205" title="(GMT+07:00) Bangkok, Hanoi, Jakarta">(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
+                                <option value="207" title="(GMT+07:00) Krasnoyarsk">(GMT+07:00) Krasnoyarsk</option>
+                                <option value="208" title="(GMT+07:00) Barnaul, Gorno-Altaysk">(GMT+07:00) Barnaul, Gorno-Altaysk</option>
+                                <option value="209" title="(GMT+07:00) Hovd">(GMT+07:00) Hovd</option>
+                                <option value="211" title="(GMT+07:00) Tomsk">(GMT+07:00) Tomsk</option>
+                                <option value="210" title="(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+                                <option value="215" title="(GMT+08:00) Kuala Lumpur, Singapore">(GMT+08:00) Kuala Lumpur, Singapore</option>
+                                <option value="220" title="(GMT+08:00) Taipei">(GMT+08:00) Taipei</option>
+                                <option value="225" title="(GMT+08:00) Perth">(GMT+08:00) Perth</option>
+                                <option value="227" title="(GMT+08:00) Irkutsk">(GMT+08:00) Irkutsk</option>
+                                <option value="228" title="(GMT+08:00) Ulaanbaatar">(GMT+08:00) Ulaanbaatar</option>
+                                <option value="229" title="(GMT+08:30) Pyongyang">(GMT+08:30) Pyongyang</option>
+                                <option value="231" title="(GMT+08:45) Eucla">(GMT+08:45) Eucla</option>
+                                <option value="230" title="(GMT+09:00) Seoul">(GMT+09:00) Seoul</option>
+                                <option value="235" title="(GMT+09:00) Osaka, Sapporo, Tokyo">(GMT+09:00) Osaka, Sapporo, Tokyo</option>
+                                <option value="240" title="(GMT+09:00) Yakutsk">(GMT+09:00) Yakutsk</option>
+                                <option value="241" title="(GMT+09:00) Chita">(GMT+09:00) Chita</option>
+                                <option value="245" title="(GMT+09:30) Darwin">(GMT+09:30) Darwin</option>
+                                <option value="250" title="(GMT+09:30) Adelaide">(GMT+09:30) Adelaide</option>
+                                <option value="255" title="(GMT+10:00) Canberra, Melbourne, Sydney">(GMT+10:00) Canberra, Melbourne, Sydney</option>
+                                <option value="260" title="(GMT+10:00) Brisbane">(GMT+10:00) Brisbane</option>
+                                <option value="265" title="(GMT+10:00) Hobart">(GMT+10:00) Hobart</option>
+                                <option value="270" title="(GMT+10:00) Vladivostok">(GMT+10:00) Vladivostok</option>
+                                <option value="275" title="(GMT+10:00) Guam, Port Moresby">(GMT+10:00) Guam, Port Moresby</option>
+                                <option value="274" title="(GMT+10:30) Lord Howe Island">(GMT+10:30) Lord Howe Island</option>
+                                <option value="276" title="(GMT+11:00) Bougainville Island">(GMT+11:00) Bougainville Island</option>
+                                <option value="277" title="(GMT+11:00) Norfolk Island">(GMT+11:00) Norfolk Island</option>
+                                <option value="278" title="(GMT+11:00) Sakhalin">(GMT+11:00) Sakhalin</option>
+                                <option value="279" title="(GMT+11:00) Chokurdakh">(GMT+11:00) Chokurdakh</option>
+                                <option value="280" title="(GMT+11:00) Solomon Is., New Caledonia">(GMT+11:00) Solomon Is., New Caledonia</option>
+                                <option value="281" title="(GMT+11:00) Magadan">(GMT+11:00) Magadan</option>
+                                <option value="284" title="(GMT+12:00) Coordinated Universal Time+12">(GMT+12:00) Coordinated Universal Time+12</option>
+                                <option value="285" title="(GMT+12:00) Fiji">(GMT+12:00) Fiji</option>
+                                <option value="290" title="(GMT+12:00) Auckland, Wellington">(GMT+12:00) Auckland, Wellington</option>
+                                <option value="295" title="(GMT+12:00) Anadyr, Petropavlovsk-Kamchatsky">(GMT+12:00) Anadyr, Petropavlovsk-Kamchatsky</option>
+                                <option value="299" title="(GMT+12:45) Chatham Islands">(GMT+12:45) Chatham Islands</option>
+                                <option value="1" title="(GMT+13:00) Samoa">(GMT+13:00) Samoa</option>
+                                <option value="300" title="(GMT+13:00) Nuku'alofa">(GMT+13:00) Nuku'alofa</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="currencyOption">Currency&nbsp;&nbsp; </label>
+                            <select id="currencyOption">
+                                <option value="-1">No Change</option>
+                            </select>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="allowAutoCreate">Auto Create Contact&nbsp;&nbsp; </label>
+                            <select id="allowAutoCreate">
+                                <option value="-1">No Change</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
         <input id="saveSettings" type="button" value="Save" onclick="UpdateUserSettings();" class="btn btn-primary btn-block" />
-    </div>
-
+    </form>
     <script>
         var userSettingId = ""
         $(document).ready(
@@ -210,7 +234,7 @@
                 type: "GET",
                 contentType: "application/json; charset=utf-8",
                 datatype: "json",
-                url: Xrm.Page.context.getClientUrl() + "/api/data/v8.2/systemusers?$select=systemuserid,fullname&$filter=isdisabled eq false and  accessmode eq 0&$orderby=fullname",
+                url: Xrm.Page.context.getClientUrl() + "/api/data/v8.1/systemusers?$select=systemuserid,fullname,_businessunitid_value&$filter=isdisabled eq false and  accessmode eq 0&$orderby=fullname",
                 beforeSend: function (XMLHttpRequest) {
                     XMLHttpRequest.setRequestHeader("OData-MaxVersion", "4.0");
                     XMLHttpRequest.setRequestHeader("OData-Version", "4.0");
@@ -223,9 +247,10 @@
                     for (var i = 0; i < results.value.length; i++) {
                         var systemuserid = results.value[i]["systemuserid"];
                         var systemuserName = results.value[i]["fullname"];
+                        var businessUnit = results.value[i]["_businessunitid_value@OData.Community.Display.V1.FormattedValue"];
                         $('#userSelect').append($('<option>', {
                             value: systemuserid,
-                            text: systemuserName
+                            text: systemuserName + " (" + businessUnit + ")"
                         }));
                     }
 
@@ -244,63 +269,74 @@
             debugger;
             if (userId == null || userId == undefined || userId == "") {
                 $("#settingsTable").hide();
+                return;
             }
             else {
                 $("#settingsTable").show();
             }
-            $.ajax({
-                type: "GET",
-                contentType: "application/json; charset=utf-8",
-                datatype: "json",
-                url: Xrm.Page.context.getClientUrl() + "/api/data/v8.2/usersettingscollection(" + userId + ")?$select=isdefaultcountrycodecheckenabled,defaultcalendarview,workdaystarttime,workdaystoptime,incomingemailfilteringmethod,autocreatecontactonpromote,advancedfindstartupmode,paginglimit,defaultcountrycode,incomingemailfilteringmethod,issendasallowed,reportscripterrors,timezonecode,_transactioncurrencyid_value",
-                beforeSend: function (XMLHttpRequest) {
-                    XMLHttpRequest.setRequestHeader("OData-MaxVersion", "4.0");
-                    XMLHttpRequest.setRequestHeader("OData-Version", "4.0");
-                    XMLHttpRequest.setRequestHeader("Accept", "application/json");
-                    XMLHttpRequest.setRequestHeader("Prefer", "odata.include-annotations=\"*\"");
-                },
-                async: false,
-                success: function (data, textStatus, xhr) {
-                    var result = data;
-                    var incomingemailfilteringmethod = result["incomingemailfilteringmethod"];
-                    var incomingemailfilteringmethod_formatted = result["incomingemailfilteringmethod@OData.Community.Display.V1.FormattedValue"];
-                    var issendasallowed = result["issendasallowed"];
-                    var issendasallowed_formatted = result["issendasallowed@OData.Community.Display.V1.FormattedValue"];
-                    var timezonecode = result["timezonecode"];
-                    var paginglimit = result["paginglimit"];
-                    var autocreatecontactonpromote = result["autocreatecontactonpromote"];
-                    var timezonecode_formatted = result["timezonecode@OData.Community.Display.V1.FormattedValue"];
-                    var _transactioncurrencyid_value = result["_transactioncurrencyid_value"];
-                    var _transactioncurrencyid_value_formatted = result["_transactioncurrencyid_value@OData.Community.Display.V1.FormattedValue"];
-                    var _transactioncurrencyid_value_lookuplogicalname = result["_transactioncurrencyid_value@Microsoft.Dynamics.CRM.lookuplogicalname"];
-                    if (issendasallowed)
-                        $("#allowSendonBehalf").prop('checked', true);
-                    else
-                        $("#allowSendonBehalf").prop('checked', false);
+            if (userId.length == 1) {
+                $.ajax({
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    datatype: "json",
+                    url: Xrm.Page.context.getClientUrl() + "/api/data/v8.1/usersettingscollection(" + userId + ")?$select=isdefaultcountrycodecheckenabled,defaultcalendarview,workdaystarttime,workdaystoptime,incomingemailfilteringmethod,autocreatecontactonpromote,advancedfindstartupmode,paginglimit,defaultcountrycode,incomingemailfilteringmethod,issendasallowed,reportscripterrors,timezonecode,_transactioncurrencyid_value",
+                    beforeSend: function (XMLHttpRequest) {
+                        XMLHttpRequest.setRequestHeader("OData-MaxVersion", "4.0");
+                        XMLHttpRequest.setRequestHeader("OData-Version", "4.0");
+                        XMLHttpRequest.setRequestHeader("Accept", "application/json");
+                        XMLHttpRequest.setRequestHeader("Prefer", "odata.include-annotations=\"*\"");
+                    },
+                    async: false,
+                    success: function (data, textStatus, xhr) {
+                        var result = data;
+                        var incomingemailfilteringmethod = result["incomingemailfilteringmethod"];
+                        var incomingemailfilteringmethod_formatted = result["incomingemailfilteringmethod@OData.Community.Display.V1.FormattedValue"];
+                        var issendasallowed = result["issendasallowed"];
+                        var issendasallowed_formatted = result["issendasallowed@OData.Community.Display.V1.FormattedValue"];
+                        var timezonecode = result["timezonecode"];
+                        var paginglimit = result["paginglimit"];
+                        var autocreatecontactonpromote = result["autocreatecontactonpromote"];
+                        var timezonecode_formatted = result["timezonecode@OData.Community.Display.V1.FormattedValue"];
+                        var _transactioncurrencyid_value = result["_transactioncurrencyid_value"];
+                        var _transactioncurrencyid_value_formatted = result["_transactioncurrencyid_value@OData.Community.Display.V1.FormattedValue"];
+                        var _transactioncurrencyid_value_lookuplogicalname = result["_transactioncurrencyid_value@Microsoft.Dynamics.CRM.lookuplogicalname"];
+                        if (issendasallowed)
+                            $("#allowSendonBehalf").val(1);
+                        else
+                            $("#allowSendonBehalf").val(0);
 
-                    if (incomingemailfilteringmethod != null && incomingemailfilteringmethod != undefined) {
-                        $("#selectIncomingEmailFilteringMethod").val(incomingemailfilteringmethod);
-                    }
-                    if (timezonecode != null && timezonecode != undefined) {
-                        $("#timezone").val(timezonecode);
-                    }
-                    if (_transactioncurrencyid_value != null && _transactioncurrencyid_value != undefined) {
-                        $("#currencyOption").val(_transactioncurrencyid_value);
-                    }
-                    if (paginglimit != null && paginglimit != undefined) {
-                        $("#selectPagingLimit").val(paginglimit);
-                    }
-                    if (autocreatecontactonpromote != null && autocreatecontactonpromote != undefined && autocreatecontactonpromote == 1) {
-                        $("#allowAutoCreate").prop('checked', true);
-                    }
-                    else
-                        $("#allowAutoCreate").prop('checked', false);
+                        if (incomingemailfilteringmethod != null && incomingemailfilteringmethod != undefined) {
+                            $("#selectIncomingEmailFilteringMethod").val(incomingemailfilteringmethod);
+                        }
+                        if (timezonecode != null && timezonecode != undefined) {
+                            $("#timezone").val(timezonecode);
+                        }
+                        if (_transactioncurrencyid_value != null && _transactioncurrencyid_value != undefined) {
+                            $("#currencyOption").val(_transactioncurrencyid_value);
+                        }
+                        if (paginglimit != null && paginglimit != undefined) {
+                            $("#selectPagingLimit").val(paginglimit);
+                        }
+                        if (autocreatecontactonpromote != null && autocreatecontactonpromote != undefined && autocreatecontactonpromote == 1) {
+                            $("#allowAutoCreate").val(1);
+                        }
+                        else
+                            $("#allowAutoCreate").val(0);
 
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    Xrm.Utility.alertDialog("Error occurred while retrieving user settings. " + textStatus + " " + errorThrown);
-                }
-            });
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        Xrm.Utility.alertDialog("Error occurred while retrieving user settings. " + textStatus + " " + errorThrown);
+                    }
+                });
+            }
+            else {
+                $("#allowSendonBehalf").val(-1);
+                $("#selectIncomingEmailFilteringMethod").val(-1);
+                $("#timezone").val(-1);
+                $("#currencyOption").val(-1);
+                $("#selectPagingLimit").val(-1);
+                $("#allowAutoCreate").val(-1);
+            }
         }
 
         function retrieveCurrencies() {
@@ -308,7 +344,7 @@
                 type: "GET",
                 contentType: "application/json; charset=utf-8",
                 datatype: "json",
-                url: Xrm.Page.context.getClientUrl() + "/api/data/v8.2/transactioncurrencies?$select=currencyname,transactioncurrencyid&$filter=statuscode eq 1",
+                url: Xrm.Page.context.getClientUrl() + "/api/data/v8.1/transactioncurrencies?$select=currencyname,transactioncurrencyid&$filter=statuscode eq 1",
                 beforeSend: function (XMLHttpRequest) {
                     XMLHttpRequest.setRequestHeader("OData-MaxVersion", "4.0");
                     XMLHttpRequest.setRequestHeader("OData-Version", "4.0");
@@ -334,34 +370,58 @@
         }
         function UpdateUserSettings() {
             var entity = {};
-            entity.issendasallowed = $("#allowSendonBehalf").is(':checked');
-            entity.autocreatecontactonpromote = $("#allowAutoCreate").is(':checked') ? 1 : 0;
-            entity["transactioncurrencyid@odata.bind"] = "/transactioncurrencies(" + $("#currencyOption").val() + ")";
-            entity.paginglimit = $("#selectPagingLimit").val();
-            entity.incomingemailfilteringmethod = $("#selectIncomingEmailFilteringMethod").val();
-            entity.timezonecode = $("#timezone").val();
+            var isupdate = false;
+            if ($("#allowSendonBehalf").val() != "-1") {
+                entity.issendasallowed = $("#allowSendonBehalf").val() == 1;
+                isupdate = true;
+            }
+            if ($("#allowAutoCreate").val() != "-1") {
+                entity.autocreatecontactonpromote = $("#allowAutoCreate").val();
+                isupdate = true;
+            }
+            if ($("#currencyOption").val() != "-1") {
+                entity["transactioncurrencyid@odata.bind"] = "/transactioncurrencies(" + $("#currencyOption").val() + ")";
+                isupdate = true;
+            }
+            if ($("#selectPagingLimit").val() != "-1") {
+                entity.paginglimit = $("#selectPagingLimit").val();
+                isupdate = true;
+            }
+            if ($("#selectIncomingEmailFilteringMethod").val() != "-1") {
+                entity.incomingemailfilteringmethod = $("#selectIncomingEmailFilteringMethod").val();
+                isupdate = true;
+            }
+            if ($("#timezone").val() != "-1") {
+                entity.timezonecode = $("#timezone").val();
+                isupdate = true;
+            }
             var userId = $('#userSelect').val();
-
-            $.ajax({
-                type: "PATCH",
-                contentType: "application/json; charset=utf-8",
-                datatype: "json",
-                url: Xrm.Page.context.getClientUrl() + "/api/data/v8.2/usersettingscollection(" + userId + ")",
-                data: JSON.stringify(entity),
-                beforeSend: function (XMLHttpRequest) {
-                    XMLHttpRequest.setRequestHeader("OData-MaxVersion", "4.0");
-                    XMLHttpRequest.setRequestHeader("OData-Version", "4.0");
-                    XMLHttpRequest.setRequestHeader("Accept", "application/json");
-                    XMLHttpRequest.setRequestHeader("If-Match", "*");
-                },
-                async: false,
-                success: function (data, textStatus, xhr) {
-                    Xrm.Utility.alertDialog("User settings have been updated successfully");
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    Xrm.Utility.alertDialog("Error occurred while updating user settings. " + textStatus + " " + errorThrown);
+            if (isupdate == true && userId.length > 0) {
+                var i = 0
+                for (i = 0; i < userId.length; i++) {
+                    $.ajax({
+                        type: "PATCH",
+                        contentType: "application/json; charset=utf-8",
+                        datatype: "json",
+                        url: Xrm.Page.context.getClientUrl() + "/api/data/v8.1/usersettingscollection(" + userId[i] + ")",
+                        data: JSON.stringify(entity),
+                        beforeSend: function (XMLHttpRequest) {
+                            XMLHttpRequest.setRequestHeader("OData-MaxVersion", "4.0");
+                            XMLHttpRequest.setRequestHeader("OData-Version", "4.0");
+                            XMLHttpRequest.setRequestHeader("Accept", "application/json");
+                            XMLHttpRequest.setRequestHeader("If-Match", "*");
+                        },
+                        async: false,
+                        success: function (data, textStatus, xhr) {
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            Xrm.Utility.alertDialog("Error occurred while updating user settings. " + textStatus + " " + errorThrown);
+                            return;
+                        }
+                    });
                 }
-            });
+                Xrm.Utility.alertDialog("User settings have been updated successfully");
+            }
         }
     </script>
 </body>
